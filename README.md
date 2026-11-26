@@ -2,16 +2,20 @@
 
 Учебный React-компонент для статьи о Storybook и Playwright. Сценарий воспроизводит правку отступов кнопки на двух ширинах и показывает, как принять новый эталон после исправления CSS.
 
-## Запуск
+## Запуск у себя
 
-Эталоны записаны на Debian 13 x86-64, Node 24, Chromium 147 из `@sparticuz/chromium` и системном Liberation Sans. Используйте Linux x86-64 с этим шрифтом для сравнения с готовыми эталонами. Для Docker предусмотрен Dockerfile. В нативном macOS или Windows требуется `npx playwright install chromium` и отдельные эталоны для своей платформы.
+Эталоны записаны на Debian 13 x86-64, Node 24, Chromium 147 из `@sparticuz/chromium` и системном Liberation Sans. Используйте Linux x86-64 с этим шрифтом для сравнения с готовыми эталонами. Для Docker предусмотрен Dockerfile. На macOS или Windows требуется `npx playwright install chromium` и отдельные эталоны для своей платформы.
 
 ```bash
+git clone https://github.com/wannaslp/coffee-visual-demo.git
+cd coffee-visual-demo
 npm ci
 npm run storybook
 ```
 
-Storybook открывается на http://127.0.0.1:6006. В дереве выберите Components → ProductCard → Narrow или Wide. Остановите сервер разработки перед запуском тестов. Playwright запускает собственный сервер на том же порту и раздает статическую сборку.
+Откройте в браузере локальную ссылку, которую Storybook напечатает в терминале. В меню слева выберите Components → ProductCard → Narrow или Wide.
+
+Перед запуском тестов остановите Storybook сочетанием Ctrl+C. Playwright сам запустит локальный сервер со статической сборкой.
 
 ```bash
 npm run build
